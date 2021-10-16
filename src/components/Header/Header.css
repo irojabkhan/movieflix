@@ -1,0 +1,22 @@
+
+.header {
+    background: #141414;
+    padding: 20px 50px;
+}
+
+.header .logo {
+    font-size: 40px;
+    line-height: 1;
+    color: #e50914;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+@media all and (max-width: 767px) {
+    .header {
+        padding: 20px 15px;
+    }
+    .header .logo {
+        font-size: 28px;
+    }
+}
