@@ -65,7 +65,13 @@ video{
 
 .App {
 	min-height: 100vh;	
+	padding-bottom: 100px;
 	background: #141414;
-
 }
 
+.item__wrap {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr;
+	gap: 30px;
+}

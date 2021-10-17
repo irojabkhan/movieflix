@@ -1,0 +1,29 @@
+
+.single__item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+    padding: 10px;
+}
+.single__item .thumb {
+    font-size: 0;
+}
+.single__item .thumb img {
+    border-radius: 10px;
+}
+
+.single__item .item__body {
+    padding-top: 10px;
+}
+.single__item .item__body h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.single__item .item__body .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.single__item .item__body .meta p {
+    color: #aaa;
+}

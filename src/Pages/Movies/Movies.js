@@ -1,10 +1,9 @@
 import React from 'react'
+import PageHeader from '../../components/Pageheader/PageHeader';
 
-function Movies() {
+const Movies = () => {
     return (
-        <div>
-            Movies
-        </div>
+        <PageHeader title='Movies' />
     )
 }
 

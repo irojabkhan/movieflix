@@ -1,10 +1,9 @@
 import React from 'react'
+import PageHeader from '../../components/Pageheader/PageHeader';
 
-function Search() {
+const Search = () => {
     return (
-        <div>
-            Search
-        </div>
+        <PageHeader title='Search' />
     )
 }
 

@@ -1,10 +1,9 @@
 import React from 'react'
+import PageHeader from '../../components/Pageheader/PageHeader';
 
-function Series() {
+const Series = () => {
     return (
-        <div>
-            Series
-        </div>
+        <PageHeader title='TV Series' />
     )
 }
 

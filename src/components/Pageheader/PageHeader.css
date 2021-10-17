@@ -1,0 +1,9 @@
+
+.page__header {
+    padding: 50px 0 25px;
+}
+.page__header h2 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 24px;
+}
