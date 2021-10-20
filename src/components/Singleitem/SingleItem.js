@@ -22,10 +22,19 @@ const SingleItem = ({
                     horizontal: 'right',
                 }}
                 badgeContent={vote_average} 
-                color={vote_average>6 ? 'primary' : 'secondary'} 
+                color={vote_average>7 ? 'primary' : 'secondary'} 
                 />
             <div className="thumb">
                 <img src={poster? `${img_300}/${poster}` : unavailable} alt="" />
+                <div className="overlay__bg"></div>
+                <div className="overlay">
+                    <h4>Overview</h4>
+                    <p>
+                        {
+                            overview.length > 50? `${overview.slice(0, 100)}...` : overview
+                        }
+                    </p>
+                </div>
             </div>
             <div className="item__body">
                 <h3>{title}</h3>

@@ -4,20 +4,77 @@
     border-radius: 10px;
     box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
     padding: 10px;
+    position: relative;
+    transition: all .3s ease;
+}
+.single__item:hover {
+    background: #222;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 1);
+}
+.single__item:hover h3 {
+    color: #fff;
+}
+.single__item .MuiBadge-root {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 .single__item .thumb {
     font-size: 0;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
 }
 .single__item .thumb img {
     border-radius: 10px;
 }
-
+.single__item .thumb .overlay__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .7);
+    transition: all .3s ease;
+    opacity: 0;
+}
+.single__item .thumb .overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: all .3s ease;
+    opacity: 0;
+}
+.single__item:hover .thumb .overlay__bg {
+    opacity: 1;
+}
+.single__item:hover .thumb .overlay {
+    top: 0;
+    opacity: 1;
+}
+.single__item .thumb .overlay h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.single__item .thumb .overlay p {
+    font-size: 14px;
+    color: #ccc;
+}
 .single__item .item__body {
     padding-top: 10px;
 }
 .single__item .item__body h3 {
     font-size: 16px;
     margin-bottom: 5px;
+    transition: all .3s ease;
 }
 .single__item .item__body .meta {
     display: flex;

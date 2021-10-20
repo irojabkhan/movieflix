@@ -75,3 +75,10 @@ video{
 	grid-template-rows: 1fr;
 	gap: 30px;
 }
+
+.pt30 {
+	padding-top: 30px;
+}
+.pb30 {
+	padding-bottom: 30px;
+}
