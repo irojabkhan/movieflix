@@ -39,7 +39,7 @@ const SingleItem = ({
             <div className="item__body">
                 <h3>{title}</h3>
                 <div className="meta">
-                    <p>{media_type=== 'tv' ? 'TV Series' : 'Movie'}</p>
+                    <p>{media_type === 'tv' ? 'TV Series' : 'Movie'}</p>
                     <p>{date}</p>
                 </div>
             </div>
