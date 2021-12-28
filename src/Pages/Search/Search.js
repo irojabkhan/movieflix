@@ -55,7 +55,7 @@ const Search = () => {
     }
 
     const fetchSearch = async() => {
-        const {data} = await axios.get(`https://api.themoviedb.org/3/search/${value ? 'movie' : 'tv'}?api_key=${process.env.REACT_APP_API_KEY}&query=${searchText}&page=${page}`)
+        const {data} = await axios.get(`https://api.themoviedb.org/3/search/${value ? 'tv' : 'movie'}?api_key=${process.env.REACT_APP_API_KEY}&query=${searchText}&page=${page}`)
 
         setContent(data.results);
         setNumOfPages(data.total_pages);
@@ -88,7 +88,7 @@ const Search = () => {
             <Box sx={{ width: '100%' }}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <Tabs value={value} onChange={handleChange} centered>
-                        <Tab label="Moive" />
+                        <Tab label="Movie" />
                         <Tab label="Tv Series" />
                     </Tabs>
                 </Box>
@@ -106,14 +106,31 @@ const Search = () => {
                                 media_type={item.media_type}
                                 />
                         ))}
-                        {searchText && !content && (value ? <h2>No Movie</h2> : <h2>No Movie Found</h2>)}
+                        {searchText && !content && (value ? <h2>No Series Found</h2> : <h2>No Movie Found</h2>)}
                     </div>
                     {numOfPages > 1 && 
                         <CustomPagination setPage={setPage} numOfPages={numOfPages} />
                     }
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    Item Two
+                    <div className="item__wrap">
+                        { content && content.map((item) => (
+                            <SingleItem 
+                                key={item.id}
+                                id={item.id}
+                                title={item.name}
+                                poster={item.poster_path}
+                                date={item.first_air_date}
+                                overview={item.overview}
+                                vote_average={item.vote_average}
+                                media_type='tv'
+                                />
+                        ))}
+                        {searchText && !content && (value ? <h2>No Series Found</h2> : <h2>No Movie Found</h2>)}
+                    </div>
+                    {numOfPages > 1 && 
+                        <CustomPagination setPage={setPage} numOfPages={numOfPages} />
+                    }
                 </TabPanel>
             </Box>
         </div>
