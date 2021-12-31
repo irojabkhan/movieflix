@@ -1,0 +1,10 @@
+
+
+.genres {
+    margin-bottom: 30px;
+}
+
+.genres .MuiButtonBase-root {
+    margin-bottom: 5px;
+    margin-right: 5px;
+}

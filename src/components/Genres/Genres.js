@@ -1,6 +1,7 @@
 import { Chip } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect } from 'react';
+import './Genres.css';
 
 const Genres = ({
     selectedGenres, 
