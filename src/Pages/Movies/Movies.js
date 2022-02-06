@@ -39,6 +39,7 @@ const Movies = () => {
                 setPage={setPage}
                 />
             <div className="item__wrap">
+                {console.log(content)}
                 { content && content.map((item) => (
                     <SingleItem 
                         key={item.id}

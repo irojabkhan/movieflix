@@ -1,5 +1,5 @@
 import { Button, Tab, Tabs, TextField } from '@mui/material';
-import React, { useState} from 'react'
+import React, { useState, useEffect} from 'react'
 import PageHeader from '../../components/Pageheader/PageHeader';
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
@@ -29,19 +29,6 @@ function TabPanel(props) {
     );
 }
 
-TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-    return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-    };
-}  
-
 const Search = () => {
     const [value, setValue] = useState(0);
     const [page, setPage] = useState(1);
@@ -56,17 +43,18 @@ const Search = () => {
     }
 
     const fetchSearch = async(e) => {
-        e.preventDefault();
-        const {data} = await axios.get(`https://api.themoviedb.org/3/search/${value ? 'movie' : 'tv'}?api_key=${process.env.REACT_APP_API_KEY}&query=${searchText}&page=${page}`)
+        e?.preventDefault();
+        const {data} = await axios.get(`https://api.themoviedb.org/3/search/${value ? 'tv' : 'movie'}?api_key=${process.env.REACT_APP_API_KEY}&query=${searchText}&page=${page}`)
         setContent(data.results);
         setNumOfPages(data.total_pages);
         setIsSearch(true);
     }
 
-    // useEffect(() => {
-    //     // window.scroll(0, 0);
-    //     // fetchSearch();
-    // }, []);
+    useEffect(() => {
+        window.scroll(0, 0);
+        fetchSearch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [value]);
 
     return (
         <div>
@@ -97,7 +85,7 @@ const Search = () => {
                         <Tab label="Tv Series" />
                     </Tabs>
                 </Box>
-                {!value ? (
+                {/* {!value ? ( */}
                     <TabPanel value={value} index={0}>
                         <div className="item__wrap">
                             { content.length > 0 ? content.map((item) => (
@@ -111,13 +99,13 @@ const Search = () => {
                                     vote_average={item.vote_average}
                                     media_type={item.media_type}
                                     />
-                            )) : (isSearch > 0 && <h2>No Movie Found</h2>)}
+                            )) : (isSearch > 0 && <h2 className='text-center w-100'>No Movie Found</h2>)}
                         </div>
                         {numOfPages > 1 && 
                             <CustomPagination setPage={setPage} numOfPages={numOfPages} />
                         }
                     </TabPanel>
-                ) : (
+                {/* ) : ( */}
                     <TabPanel value={value} index={1}>
                         <div className="item__wrap">
                             { content.length > 0 ? content.map((item) => (
@@ -131,13 +119,13 @@ const Search = () => {
                                     vote_average={item.vote_average}
                                     media_type='tv'
                                     />
-                            )) : (isSearch > 0 && <h2>No Series Found</h2>)}
+                            )) : (isSearch > 0 && <h2 className='text-center w-100'>No Series Found</h2>)}
                         </div>
                         {numOfPages > 1 && 
                             <CustomPagination setPage={setPage} numOfPages={numOfPages} />
                         }
                     </TabPanel>
-                )}
+                {/* )} */}
                 
             </Box>
         </div>

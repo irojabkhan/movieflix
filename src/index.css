@@ -85,3 +85,7 @@ video{
 .text-center {
 	text-align: center;
 }
+
+.w-100 {
+	grid-column: 1 / -1;
+}
