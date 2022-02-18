@@ -7,6 +7,7 @@ import Trending from "./Pages/Trending/Trending";
 import Movies from "./Pages/Movies/Movies";
 import Series from "./Pages/Series/Series";
 import Search from "./Pages/Search/Search";
+import SingleItem from "./Pages/SingleItem/SingleItem";
 
 import './index.css';
 
@@ -23,6 +24,8 @@ function App() {
                         <Route path='/movies' component={Movies} />
                         <Route path='/series' component={Series} />
                         <Route path='/search' component={Search} />
+
+                        <Route path='/item' component={SingleItem} />
                     </Switch>
                 </Container>
             </div>
