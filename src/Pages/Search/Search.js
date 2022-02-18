@@ -4,7 +4,7 @@ import PageHeader from '../../components/Pageheader/PageHeader';
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import axios from 'axios';
 import SingleItem from '../../components/Singleitem/SingleItem';
 import CustomPagination from '../../components/Pagination/Pagination';
@@ -80,7 +80,7 @@ const Search = () => {
             </div>
             <Box sx={{ width: '100%' }}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                    <Tabs value={value} onChange={handleChange} centered>
+                    <Tabs value={value} onChange={handleChange}>
                         <Tab label="Movie" />
                         <Tab label="Tv Series" />
                     </Tabs>
