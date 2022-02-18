@@ -14,7 +14,7 @@ const Movies = () => {
     const [genres, setGenres] = useState([]);
     const genreforURL = useGenre(selectedGenres);
 
-    const fetchMovie = async () => {
+    const getMovies = async () => {
         const { data } = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=96fd58ecd16e1528d2b51894a6fd6555&page=${page}&with_genres=${genreforURL}`);
 
         setContent(data.results);
@@ -23,7 +23,7 @@ const Movies = () => {
 
     useEffect(() => {
         window.scroll(0, 0);
-        fetchMovie();
+        getMovies();
         // eslint-disable-next-line
     }, [genreforURL, page])
 
@@ -39,7 +39,6 @@ const Movies = () => {
                 setPage={setPage}
                 />
             <div className="item__wrap">
-                {console.log(content)}
                 { content && content.map((item) => (
                     <SingleItem 
                         key={item.id}
@@ -49,7 +48,7 @@ const Movies = () => {
                         date={item.release_date}
                         overview={item.overview}
                         vote_average={item.vote_average}
-                        media_type={item.media_type}
+                        media_type='movie'
                         />
                 )) }
             </div>

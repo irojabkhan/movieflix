@@ -1,15 +1,43 @@
 
+.header__wrap {
+    padding-top: 85px;
+}
 .header {
     background: #141414;
     padding: 20px 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.header .nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header .nav ul li {
+    font-size: 15px;
+}
+
+.header .nav ul li a {
+    color: #fff;
+}
+.header .nav ul li a:hover {
+    color: #e50914;
 }
 
 .header .logo {
-    font-size: 40px;
-    line-height: 1;
-    color: #e50914;
-    font-weight: 500;
-    text-transform: uppercase;
+    font-size: 0;
+}
+
+.header .logo img {
+    max-height: 45px;
 }
 
 @media all and (max-width: 767px) {
