@@ -96,7 +96,7 @@ const Search = () => {
                                 date={item.release_date}
                                 overview={item.overview}
                                 vote_average={item.vote_average}
-                                media_type={item.media_type}
+                                media_type='movie'
                                 />
                         )) : (isSearch > 0 && <h2 className='text-center w-100'>No Movie Found</h2>)}
                     </div>
