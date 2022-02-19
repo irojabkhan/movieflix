@@ -1,10 +1,10 @@
+
+import React, { useState, useEffect} from 'react';
 import { Button, Tab, Tabs, TextField } from '@mui/material';
-import React, { useState, useEffect} from 'react'
 import PageHeader from '../../components/Pageheader/PageHeader';
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-// import PropTypes from 'prop-types';
 import axios from 'axios';
 import SingleItem from '../../components/Singleitem/SingleItem';
 import CustomPagination from '../../components/Pagination/Pagination';
@@ -85,47 +85,44 @@ const Search = () => {
                         <Tab label="Tv Series" />
                     </Tabs>
                 </Box>
-                {/* {!value ? ( */}
-                    <TabPanel value={value} index={0}>
-                        <div className="item__wrap">
-                            { content.length > 0 ? content.map((item) => (
-                                <SingleItem 
-                                    key={item.id}
-                                    id={item.id}
-                                    title={item.title}
-                                    poster={item.poster_path}
-                                    date={item.release_date}
-                                    overview={item.overview}
-                                    vote_average={item.vote_average}
-                                    media_type={item.media_type}
-                                    />
-                            )) : (isSearch > 0 && <h2 className='text-center w-100'>No Movie Found</h2>)}
-                        </div>
-                        {numOfPages > 1 && 
-                            <CustomPagination setPage={setPage} numOfPages={numOfPages} />
-                        }
-                    </TabPanel>
-                {/* ) : ( */}
-                    <TabPanel value={value} index={1}>
-                        <div className="item__wrap">
-                            { content.length > 0 ? content.map((item) => (
-                                <SingleItem 
-                                    key={item.id}
-                                    id={item.id}
-                                    title={item.name}
-                                    poster={item.poster_path}
-                                    date={item.first_air_date}
-                                    overview={item.overview}
-                                    vote_average={item.vote_average}
-                                    media_type='tv'
-                                    />
-                            )) : (isSearch > 0 && <h2 className='text-center w-100'>No Series Found</h2>)}
-                        </div>
-                        {numOfPages > 1 && 
-                            <CustomPagination setPage={setPage} numOfPages={numOfPages} />
-                        }
-                    </TabPanel>
-                {/* )} */}
+                <TabPanel value={value} index={0}>
+                    <div className="item__wrap">
+                        { content.length > 0 ? content.map((item) => (
+                            <SingleItem 
+                                key={item.id}
+                                id={item.id}
+                                title={item.title}
+                                poster={item.poster_path}
+                                date={item.release_date}
+                                overview={item.overview}
+                                vote_average={item.vote_average}
+                                media_type={item.media_type}
+                                />
+                        )) : (isSearch > 0 && <h2 className='text-center w-100'>No Movie Found</h2>)}
+                    </div>
+                    {numOfPages > 1 && 
+                        <CustomPagination setPage={setPage} numOfPages={numOfPages} />
+                    }
+                </TabPanel>
+                <TabPanel value={value} index={1}>
+                    <div className="item__wrap">
+                        { content.length > 0 ? content.map((item) => (
+                            <SingleItem 
+                                key={item.id}
+                                id={item.id}
+                                title={item.name}
+                                poster={item.poster_path}
+                                date={item.first_air_date}
+                                overview={item.overview}
+                                vote_average={item.vote_average}
+                                media_type='tv'
+                                />
+                        )) : (isSearch > 0 && <h2 className='text-center w-100'>No Series Found</h2>)}
+                    </div>
+                    {numOfPages > 1 && 
+                        <CustomPagination setPage={setPage} numOfPages={numOfPages} />
+                    }
+                </TabPanel>
                 
             </Box>
         </div>

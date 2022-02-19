@@ -9,7 +9,7 @@ export default function Header() {
         <div className="header__wrap">
             <div className="header">
                 <div className="logo">
-                    <Link to="/browse">
+                    <Link to="/">
                         <img src={Logo} alt="Brand logo"/>
                     </Link>
                 </div>

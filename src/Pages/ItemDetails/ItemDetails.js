@@ -15,7 +15,6 @@ const ItemDetails = () => {
         const { data } =  await axios.get(`https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`);
 
         setItem(data);
-        console.log(data)
     };
 
     useEffect(() => {
@@ -26,7 +25,7 @@ const ItemDetails = () => {
 
     return (
         item && (
-            <div className='item__details'>
+            <div className='item__details' key={item.id}>
                 <div className="item__thumb">
                     <img src={item.poster_path? `${img_500}/${item.poster_path}` : unavailable} alt="" />
                 </div>
@@ -39,7 +38,7 @@ const ItemDetails = () => {
                     <p><strong>Date</strong>: {item.first_air_date || item.release_date}</p>
                     <p><strong>Language</strong>: {item.original_language}</p>
                     <p><strong>IMDB Rating</strong>: {item.vote_average}</p>
-                    <p><strong>Media Type</strong>: {media_type == 'tv' ? 'Tv Series' : 'Movie'}</p>
+                    <p><strong>Media Type</strong>: {media_type === 'tv' ? 'Tv Series' : 'Movie'}</p>
                     <p><strong>Run Time</strong>: {item.runtime}</p>
                 </div>
             </div>
