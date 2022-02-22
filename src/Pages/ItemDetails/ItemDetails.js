@@ -6,20 +6,40 @@ import axios from 'axios';
 import './ItemDetails.css';
 
 import {img_500, unavailable} from '../../config/config';
+import { Link } from 'react-router-dom';
+import TrailerModal from '../../components/TrailerModal/TrailerModal';
 
 const ItemDetails = () => {
     const {id, media_type} = useParams();
     const [item, setItem] = useState(null);
+    const [video, setVideo] = useState('');
 
     const fetchItem = async () => {
         const { data } =  await axios.get(`https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`);
-
         setItem(data);
     };
+
+    const fetchVideo = async () => {
+        const { data: {results = []}} =  await axios.get(
+            `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+            );
+
+        const trailers = results.filter(trailer => trailer.type === 'Trailer');
+
+        console.log(trailers);
+
+        const singleVideoKey = trailers.length > 0 ? trailers[0].key : ''; 
+        setVideo(singleVideoKey);
+        
+    };
+
+    console.log(video);
 
     useEffect(() => {
         window.scroll(0, 0);
         fetchItem();
+        fetchVideo();
+
         // eslint-disable-next-line
     }, [media_type, id])
 
@@ -32,7 +52,7 @@ const ItemDetails = () => {
                 <div className="item__content">
                     <h1 className="title">{item.title || item.name}</h1>
                     <p className='item__genres'>{item.genres.map((genre) => (
-                        <span>{genre.name}</span>
+                        <Link to={`/${media_type}`}>{genre.name}</Link>
                     ))}</p>
                     <p className='overview'>{item.overview}</p>
                     <p><strong>Date</strong>: {item.first_air_date || item.release_date}</p>
@@ -40,6 +60,12 @@ const ItemDetails = () => {
                     <p><strong>IMDB Rating</strong>: {item.vote_average}</p>
                     <p><strong>Media Type</strong>: {media_type === 'tv' ? 'Tv Series' : 'Movie'}</p>
                     <p><strong>Run Time</strong>: {item.runtime}</p>
+                    {
+                        video && (
+                            <TrailerModal url={`https://www.youtube.com/embed/${video}`} />
+                        )
+                    }
+                    
                 </div>
             </div>
         )

@@ -19,10 +19,10 @@ function App() {
                 <Container>
                     <Switch>
                         <Route path='/' component={Trending} exact />
-                        <Route path='/movies' component={Movies} />
-                        <Route path='/series' component={Series} />
-                        <Route path='/search' component={Search} />
-                        <Route path='./browse' component={Trending} />
+                        <Route path='/movie' component={Movies} exact />
+                        <Route path='/tv' component={Series} exact />
+                        <Route path='/search' component={Search} exact />
+                        <Route path='./browse' component={Trending} exact />
 
                         <Route path='/:media_type/:id' component={ItemDetails} />
                     </Switch>

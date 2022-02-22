@@ -33,7 +33,7 @@
     gap: 10px;
     margin-bottom: 20px;
 }
-.item__content .item__genres span {
+.item__content .item__genres a {
     background-color: rgba(0,0,0, .1);
     padding: 2px 15px;
     border-radius: 20px;
@@ -44,4 +44,36 @@
     font-size: 15px;
     color: #6e6e6e;
     margin-bottom: 10px;
+}
+.item__content button {
+    background: #e50914;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 11.5px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.ReactModal__Content {
+    overflow: unset !important;
+}
+.ReactModal__Content .modal__close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    background: #e50914;
 }

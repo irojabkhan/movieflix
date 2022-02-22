@@ -10,7 +10,7 @@ const Genres = ({
     setGenres, 
     type, 
     setPage
-}) => {
+    }) => {
 
     const handleAdd = (genre) => {
         setSelectedGenres([...selectedGenres, genre]);

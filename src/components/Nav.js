@@ -9,10 +9,10 @@ function Nav() {
                     <Link to="/">Trending</Link>
                 </li>
                 <li>
-                    <Link to="/movies">Movies</Link>
+                    <Link to="/movie">Movies</Link>
                 </li>
                 <li>
-                    <Link to="/series">Series</Link>
+                    <Link to="/tv">Series</Link>
                 </li>
                 <li>
                     <Link to="/search">Search</Link>
