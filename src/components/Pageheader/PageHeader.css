@@ -1,9 +1,35 @@
 
 .page__header {
     padding: 50px 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .page__header h2 {
     /* color: #fff; */
     font-weight: 500;
     font-size: 24px;
+}
+.page__header .custom__select {
+    position: relative;
+}
+.page__header .custom__select:before {
+    position: absolute;
+    top: 18px;
+    right: 12px;
+    content: "";
+    border-top: 5px solid #222;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+.page__header select {
+    background: rgba(0, 0, 0, 0.08);
+    height: 40px;
+    border-radius: 5px;
+    padding: 0 28px 0 15px;
+    font-size: 14px;
+    text-transform: capitalize;
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
 }
