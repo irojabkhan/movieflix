@@ -23,7 +23,6 @@ const Movies = () => {
 
     const handleChange = (e) => {
         setSortBy(e.target.value);
-        console.log(sortBy);
     }
 
     const getMovies = async () => {

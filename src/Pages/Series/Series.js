@@ -23,7 +23,6 @@ const Series = () => {
 
     const handleChange = (e) => {
         setSortBy(e.target.value);
-        console.log(sortBy);
     }
 
     const getSeries = async () => {
