@@ -26,14 +26,10 @@ const ItemDetails = () => {
 
         const trailers = results.filter(trailer => trailer.type === 'Trailer');
 
-        console.log(trailers);
-
         const singleVideoKey = trailers.length > 0 ? trailers[0].key : ''; 
         setVideo(singleVideoKey);
         
     };
-
-    console.log(video);
 
     useEffect(() => {
         window.scroll(0, 0);

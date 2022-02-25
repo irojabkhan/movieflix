@@ -14,6 +14,8 @@ const Movies = () => {
     const [genres, setGenres] = useState([]);
     const genreforURL = useGenre(selectedGenres);
 
+    const today = new Date().toISOString().slice(0, 10);
+
     const getInitialState = () => {
         const sortBy = "popularity.desc";
         return sortBy;
@@ -26,7 +28,7 @@ const Movies = () => {
     }
 
     const getMovies = async () => {
-        const { data } = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=96fd58ecd16e1528d2b51894a6fd6555&sort_by=${sortBy}&page=${page}&with_genres=${genreforURL}`);
+        const { data } = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=96fd58ecd16e1528d2b51894a6fd6555&sort_by=${sortBy}&primary_release_date.lte=${today}&page=${page}&with_genres=${genreforURL}`);
 
         setContent(data.results);
         setNumOfPages(data.total_pages);

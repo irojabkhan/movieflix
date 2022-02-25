@@ -25,6 +25,7 @@
 }
 .single__item .thumb img {
     border-radius: 10px;
+    width: 100%;
 }
 .single__item .thumb .overlay__bg {
     position: absolute;
