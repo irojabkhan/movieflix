@@ -6,13 +6,16 @@ function Nav() {
         <div className='nav'>
             <ul>
                 <li>
-                    <Link to="/">Trending</Link>
+                    <Link to="/trending">Trending</Link>
                 </li>
                 <li>
                     <Link to="/movie">Movies</Link>
                 </li>
                 <li>
                     <Link to="/tv">Series</Link>
+                </li>
+                <li>
+                    <Link to="/upcoming">Upcoming</Link>
                 </li>
                 <li>
                     <Link to="/search">Search</Link>

@@ -10,6 +10,8 @@ import ItemDetails from "./Pages/ItemDetails/ItemDetails";
 import Footer from './components/Footer/Footer';
 
 import './index.css';
+import NotFound from "./Pages/NotFound/NotFound";
+import Upcoming from "./Pages/Upcoming/Upcoming";
 
 function App() {
     return (
@@ -19,12 +21,16 @@ function App() {
                 <Container>
                     <Switch>
                         <Route path='/' component={Trending} exact />
+                        <Route path='/trending' component={Trending} exact />
                         <Route path='/movie' component={Movies} exact />
                         <Route path='/tv' component={Series} exact />
                         <Route path='/search' component={Search} exact />
-                        <Route path='./browse' component={Trending} exact />
+                        <Route path='/upcoming' component={Upcoming} exact />
+                        <Route path='/browse' component={Trending} exact />
 
                         <Route path='/:media_type/:id' component={ItemDetails} />
+
+                        <Route component={NotFound} />
                     </Switch>
                 </Container>
                 <Footer />

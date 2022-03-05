@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import Genres from '../../components/Genres/Genres';
 import PageHeader from '../../components/Pageheader/PageHeader';
 import CustomPagination from '../../components/Pagination/Pagination';
@@ -28,7 +28,7 @@ const Movies = () => {
     }
 
     const getMovies = async () => {
-        const { data } = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=96fd58ecd16e1528d2b51894a6fd6555&sort_by=${sortBy}&primary_release_date.lte=${today}&page=${page}&with_genres=${genreforURL}`);
+        const { data } = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&sort_by=${sortBy}&primary_release_date.lte=${today}&page=${page}&with_genres=${genreforURL}`);
 
         setContent(data.results);
         setNumOfPages(data.total_pages);

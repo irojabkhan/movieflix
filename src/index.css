@@ -89,3 +89,8 @@ video{
 .w-100 {
 	grid-column: 1 / -1;
 }
+
+.not__found {
+	margin-top: 100px;
+	text-align: center;
+}

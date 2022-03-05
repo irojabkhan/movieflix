@@ -52,7 +52,7 @@ const ItemDetails = () => {
                     ))}</p>
                     <p className='overview'>{item.overview}</p>
                     <p><strong>Date</strong>: {item.first_air_date || item.release_date}</p>
-                    <p><strong>Language</strong>: {item.original_language}</p>
+                    <p><strong>Language</strong>: {item.spoken_languages[0].english_name}</p>
                     <p><strong>IMDB Rating</strong>: {item.vote_average}</p>
                     <p><strong>Media Type</strong>: {media_type === 'tv' ? 'Tv Series' : 'Movie'}</p>
                     <p><strong>Run Time</strong>: {item.runtime}</p>
