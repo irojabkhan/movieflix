@@ -2,17 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import Genres from '../../components/Genres/Genres';
 import useGenre from '../../hooks/useGenre';
-// import { Button, Tab, Tabs, TextField } from '@mui/material';
 import PageHeader from '../../components/Pageheader/PageHeader';
-// import Typography from '@mui/material/Typography';
-// import Box from '@mui/material/Box';
 import axios from 'axios';
 import SingleItem from '../../components/Singleitem/SingleItem';
 import CustomPagination from '../../components/Pagination/Pagination';
 
 
 const Upcoming = () => {
-    const [value, setValue] = useState(0);
     const [page, setPage] = useState(1);
     const [content, setContent] = useState([]);
     const [numOfPages, setNumOfPages] = useState();
