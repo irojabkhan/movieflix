@@ -32,7 +32,7 @@ function TrailerModal(props) {
                 style={customStyles}
                 contentLabel="Example Modal"
                 >
-                <iframe title='watch trailer' src={props.url} width="1110" height="630" autoplay="1" frameBorder="0" allowfullscreen="1"></iframe>
+                <iframe title='watch trailer' src={props.url} width="1110" height="630" autoPlay="1" frameBorder="0" allowFullScreen="1"></iframe>
                 <button className='modal__close' onClick={closeModal}>X</button>
             </Modal>
         </div>

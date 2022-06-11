@@ -6,7 +6,7 @@ import PageHeader from '../../components/Pageheader/PageHeader';
 import axios from 'axios';
 import SingleItem from '../../components/Singleitem/SingleItem';
 import CustomPagination from '../../components/Pagination/Pagination';
-
+import {img_300, unavailable} from '../../config/config';
 
 const Upcoming = () => {
     const [page, setPage] = useState(1);
@@ -20,7 +20,7 @@ const Upcoming = () => {
     const today = new Date().toISOString().slice(0, 10);
 
     const getMovies = async () => {
-        const { data } = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&primary_release_date.gte=${today}&page=${page}&with_genres=${genreforURL}`);
+        const { data } = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&sort_by=release_date.asc&primary_release_date.gte=${today}&page=${page}&with_genres=${genreforURL}`);
 
         setContent(data.results);
         setNumOfPages(data.total_pages);

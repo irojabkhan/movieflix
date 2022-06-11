@@ -77,3 +77,14 @@
     cursor: pointer;
     background: #e50914;
 }
+
+.cast__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 15px;
+}
+
+.showHandle {
+    grid-column: 1 / -1;
+    text-align: center;
+}

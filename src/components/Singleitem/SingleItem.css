@@ -22,10 +22,14 @@
     position: relative;
     border-radius: 10px;
     overflow: hidden;
+    height: 368.25px;
+    background: #ddd;
 }
 .single__item .thumb img {
     border-radius: 10px;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .single__item .thumb .overlay__bg {
     position: absolute;

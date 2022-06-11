@@ -75,7 +75,9 @@ video{
 	grid-template-rows: 1fr;
 	gap: 30px;
 }
-
+.pb20 {
+	padding-bottom: 20px;
+}
 .pt30 {
 	padding-top: 30px;
 }
@@ -93,4 +95,8 @@ video{
 .not__found {
 	margin-top: 100px;
 	text-align: center;
+}
+
+.pt50 {
+	padding-top: 50px;
 }

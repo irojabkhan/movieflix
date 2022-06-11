@@ -1,0 +1,16 @@
+
+.cast__item {
+    background: #ddd;
+    border-radius: 8px;
+}
+.cast__item .thumb {
+    height: 170px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.cast__item p {
+    line-height: 1.3;
+    padding: 8px 5px;
+    text-align: center;
+}
