@@ -61,18 +61,18 @@ const ItemDetails = () => {
     return (
         item && (
             <>
-                <div className='item__details' key={item.id}>
+                <div className='item__details'>
                     <div className="item__thumb">
                         <img src={item.poster_path? `${img_500}/${item.poster_path}` : unavailable} alt="" />
                     </div>
                     <div className="item__content">
                         <h1 className="title">{item.title || item.name}</h1>
-                        <p className='item__genres'>{item.genres.map((genre) => (
-                            <Link to={`/${media_type}`}>{genre.name}</Link>
+                        <p className='item__genres'>{item.genres.map((genre, index) => (
+                            <Link key={index} to={`/${media_type}`}>{genre.name}</Link>
                         ))}</p>
                         {
-                            crew && crew.map((dir) => (
-                                <p><strong>Director: {dir.name}</strong></p>
+                            crew && crew.map((dir, index) => (
+                                <p key={index}><strong>Director: {dir.name}</strong></p>
                             ))
                         }
                         <p className='overview'>{item.overview}</p>
@@ -94,26 +94,26 @@ const ItemDetails = () => {
                             <div className="cast__list">
                                 {
                                     cast && showCast ? (
-                                        cast.map((item) => (
+                                        cast.map((item, index) => (
                                             <Cast
+                                                key={index}
                                                 path={item.profile_path? `${img_300}/${item.profile_path}` : unavailable}
                                                 alt={item.name}
-                                                key={item.id}
                                                 name={item.name}
                                             />
                                         ))
                                     ) : (
-                                        cast.slice(0, 8).map((item) => (
+                                        cast.slice(0, 8).map((item, index) => (
                                             <Cast
+                                                key={index}
                                                 path={item.profile_path? `${img_300}/${item.profile_path}` : unavailable}
                                                 alt={item.name}
-                                                key={item.id}
                                                 name={item.name}
                                             />
                                         ))
                                     )
                                 }
-                                <p className='showHandle'><a href="#" onClick={handleShowCast}>Show {showCast ? 'Less' : 'All'}</a></p>
+                                <p className='showHandle'><span onClick={handleShowCast}>Show {showCast ? 'Less' : 'All'}</span></p>
                             </div>
                         </div>
 

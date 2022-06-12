@@ -7,7 +7,7 @@ const Cast = (props) => {
             <div className="thumb">
                 <img src={props.path} alt={props.alt} />
             </div>
-            <p key={props.key}>{props.name}</p>
+            <p>{props.name}</p>
         </div>
     )
 }
