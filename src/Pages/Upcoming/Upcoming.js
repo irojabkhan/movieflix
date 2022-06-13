@@ -6,7 +6,7 @@ import PageHeader from '../../components/Pageheader/PageHeader';
 import axios from 'axios';
 import SingleItem from '../../components/Singleitem/SingleItem';
 import CustomPagination from '../../components/Pagination/Pagination';
-import {img_300, unavailable} from '../../config/config';
+// import {img_300, unavailable} from '../../config/config';
 
 const Upcoming = () => {
     const [page, setPage] = useState(1);

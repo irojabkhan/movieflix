@@ -100,3 +100,11 @@ video{
 .pt50 {
 	padding-top: 50px;
 }
+
+.mb20 {
+	margin-bottom: 20px;
+}
+
+.bb {
+	border-bottom: 1px solid #ccc;
+}

@@ -3,8 +3,8 @@ import React, { useState, useEffect} from 'react';
 import { Button, Tab, Tabs, TextField } from '@mui/material';
 import PageHeader from '../../components/Pageheader/PageHeader';
 import SearchIcon from '@mui/icons-material/Search';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+// import Typography from '@mui/material/Typography';
+// import Box from '@mui/material/Box';
 import axios from 'axios';
 import SingleItem from '../../components/Singleitem/SingleItem';
 import CustomPagination from '../../components/Pagination/Pagination';
@@ -21,9 +21,9 @@ function TabPanel(props) {
         {...other}
     >
         {value === index && (
-        <Box sx={{ p: 3 }}>
-            <Typography>{children}</Typography>
-        </Box>
+        <div>
+            <div>{children}</div>
+        </div>
         )}
     </div>
     );
@@ -44,10 +44,12 @@ const Search = () => {
 
     const fetchSearch = async(e) => {
         e?.preventDefault();
-        const {data} = await axios.get(`https://api.themoviedb.org/3/search/${value ? 'tv' : 'movie'}?api_key=${process.env.REACT_APP_API_KEY}&query=${searchText}&page=${page}`)
-        setContent(data.results);
-        setNumOfPages(data.total_pages);
-        setIsSearch(true);
+        if(searchText.length > 0) {
+            const {data} = await axios.get(`https://api.themoviedb.org/3/search/${value ? 'tv' : 'movie'}?api_key=${process.env.REACT_APP_API_KEY}&query=${searchText}&page=${page}`)
+            setContent(data.results);
+            setNumOfPages(data.total_pages);
+            setIsSearch(true);
+        }
     }
 
     useEffect(() => {
@@ -77,13 +79,13 @@ const Search = () => {
                     </Button>
                 </form>
             </div>
-            <Box sx={{ width: '100%' }}>
-                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+            <div>
+                <div className='mb20 bb'>
                     <Tabs value={value} onChange={handleChange}>
                         <Tab label="Movie" />
                         <Tab label="Tv Series" />
                     </Tabs>
-                </Box>
+                </div>
                 <TabPanel value={value} index={0}>
                     <div className="item__wrap">
                         { content.length > 0 ? content.map((item) => (
@@ -123,7 +125,7 @@ const Search = () => {
                     }
                 </TabPanel>
                 
-            </Box>
+            </div>
         </div>
     )
 }
