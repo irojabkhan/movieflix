@@ -108,6 +108,6 @@ video{
 .bb {
 	border-bottom: 1px solid #ccc;
 }
-.App .css-1p9u36m-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
-	background-color: #222;
+.css-1p9u36m-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+	background-color: #222 !important;
 }
