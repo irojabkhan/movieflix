@@ -14,8 +14,8 @@
 }
 .single__item .MuiBadge-root {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 22px;
+    right: 27px;
 }
 .single__item .thumb {
     font-size: 0;

@@ -6,7 +6,6 @@
     gap: 50px;
 }
 
-
 .item__details .thumb {
     flex: 0 0 38%;
 }
@@ -84,7 +83,36 @@
     gap: 15px;
 }
 
-.showHandle {
+.show__handle {
     grid-column: 1 / -1;
     text-align: center;
+}
+
+.show__handle span {
+    cursor: pointer;
+}
+
+@media all and (max-width: 991px) {
+    .item__details {
+        display: block;
+        padding-top: 50px;
+    }
+    .item__details .item__content {
+        margin-top: 20px;
+    }
+    .item__content .title {
+        font-size: 42px;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .item__content .title {
+        font-size: 38px;
+    }
+}
+
+@media all and (max-width: 575px) {
+    .item__content .title {
+        font-size: 28px;
+    }
 }

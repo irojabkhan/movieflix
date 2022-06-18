@@ -71,7 +71,7 @@ video{
 
 .item__wrap {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
 	grid-template-rows: 1fr;
 	gap: 30px;
 }
@@ -107,4 +107,7 @@ video{
 
 .bb {
 	border-bottom: 1px solid #ccc;
+}
+.App .css-1p9u36m-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+	background-color: #222;
 }
