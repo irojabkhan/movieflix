@@ -116,3 +116,7 @@
         font-size: 28px;
     }
 }
+
+.pagination .Mui-selected {
+	background-color: #222 !important;
+}

@@ -147,10 +147,10 @@ const ItemDetails = () => {
                                 id={item.id}
                                 title={item.title || item.name}
                                 poster={item.poster_path}
-                                // date={item.first_air_date || item.release_date}
+                                date={item.first_air_date || item.release_date}
                                 overview={item.overview}
                                 // vote_average={item.vote_average}
-                                media_type={item.media_type}
+                                media_type={media_type}
                                 />
                             )) 
                         }
